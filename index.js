@@ -43,6 +43,7 @@ function ActionToggleButton(options) {
     this.active = 0;
     this.currentState;
     this.nextState;
+    this.prevState;
 }
 
 module.exports = ActionToggleButton;
@@ -60,6 +61,10 @@ ActionToggleButton.prototype.init = function(self) {
 
     if (!component.nextState) {
         component.nextState = component.options.states[component.currentState] ? component.options.states[component.currentState].nextState : 'stateB';
+    }
+
+    if (!component.prevState) {
+        component.prevState = component.currentState;
     }
 
     component._stateChange('XHRrequest');
@@ -114,6 +119,7 @@ ActionToggleButton.prototype.stateA = function() {
 
     var component = this;
     component.nextState = 'stateB';
+    component.prevState = 'stateA';
 
     component._click(function(){
 
@@ -126,6 +132,7 @@ ActionToggleButton.prototype.stateB = function() {
 
     var component = this;
     component.nextState = 'stateA';
+    component.prevState = 'stateB';
 
     component._click(function(){
 
@@ -165,7 +172,7 @@ ActionToggleButton.prototype._XHRresponse = function() {
 
     } else {
 
-        component._stateChange(component.nextState ? component.nextState : 'stateA');
+        component._stateChange(component.prevState);
         component.emit('error');
     }
 

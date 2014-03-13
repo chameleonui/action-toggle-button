@@ -69,11 +69,11 @@
             });
 
             instance.on('error', function() {
-                console.log(this.self, this.response);
+                console.log('error', this.self, this.response);
             });
 
             instance.on('success', function() {
-                console.log(this.self, this.response);
+                console.log('success', this.self, this.response);
             });
 
         };

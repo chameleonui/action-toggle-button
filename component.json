@@ -2,7 +2,7 @@
   "name": "action-toggle-button",
   "repo": "chameleonui/action-toggle-button",
   "description": "simple 2 state button toggling after succesful ajax response",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [],
   "dependencies": {
     "component/jquery": "*",
