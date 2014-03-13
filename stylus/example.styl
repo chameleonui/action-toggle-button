@@ -1,0 +1,59 @@
+
+// import some mixins dependencies
+@import "../components/chameleonui-utils/vendors"
+@import "../components/chameleonui-css3/box-shadow"
+@import "../components/chameleonui-css3/border-radius"
+@import "../components/chameleonui-css3/font-smoothing"
+@import "../components/chameleonui-css3/opacity"
+@import "../components/chameleonui-css3/transition"
+
+
+// styles
+body
+    font-family: sans-serif
+
+
+.button-default
+.button-disabled
+.button-primary
+    display: inline-block
+    margin: 0
+    padding: .7em 1em
+    border-radius: 2px
+    cursor: pointer
+    outline: 0 none
+    box-shadow: none
+    border-style: solid
+    border-width: 2px
+    font-smoothing: antialiased
+    transition: all .2s
+    text-decoration: none
+
+.button-default
+    background: #eaeaea
+    border-color: #e0e0e0
+    color: #393939
+
+    &:hover
+        background: #e0e0e0
+    
+.button-disabled
+    background: #eaeaea
+    border-color: #e0e0e0
+    color: #393939
+    opacity: .6
+    cursor: default
+
+.button-primary
+    background: #2a8fbd
+    border-color: #257fa9
+    color: #ffffff
+
+    &:hover
+        background: #257fa9
+        
+
+
+
+
+

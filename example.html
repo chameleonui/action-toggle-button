@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Toggled Button</title>
+    <link rel="stylesheet" href="./build/build.css">
+    <link rel="stylesheet" href="./example.css">
+</head>
+<body>
+    
+    <h1>AJAX Toggled Button Example</h1>
+
+    <div class="listed-buttons">
+        <p>
+            <a href="http://experiments.apiary.io/action-confirm-button" class="button-default js-action-confirm" data-state="stateA"><i class="fa fa-star-o"></i></a>
+        </p>
+        <p>
+            <a href="http://experiments.apiary.io/action-confirm-button" class="button-primary js-action-confirm"  data-state="stateB"><i class="fa fa-star"></i></a>
+        </p>
+        <p>
+            <a href="http://experiments.apiary.io/action-confirm-button" class="button-default js-action-confirm"  data-state="stateA"><i class="fa fa-star-o"></i></a>
+        </p>
+    </div>
+    <div>
+        <p>
+            <a href="#" class="js-add-button">Add button</a>
+        </p>
+    </div>
+
+    <h2>Buttons</h2>
+
+    <p><a href="#" class="button-default"><i class="fa fa-star-o"></i></a></p>
+    <p><a href="#" class="button-disabled"><i class="fa fa-spinner fa-spin"></i></a></p>
+    <p><a href="#" class="button-primary"><i class="fa fa-star"></i></a></p>
+
+    
+    <script src="./build/build.js"></script>
+    <script>
+        var ATB = require('action-toggle-button');
+        var jQuery = require('component-jquery');
+
+        (function(){
+            var list = jQuery('.listed-buttons');
+            var stateArray = ['<p><a href="http://experiments.apiary.io/action-confirm-button" class="button-default js-action-confirm" data-state="stateA"><i class="fa fa-star-o"></i></a></p>', '<p><a href="http://experiments.apiary.io/action-confirm-button" class="button-primary js-action-confirm" data-state="stateB"><i class="fa fa-star"></i></a></p>'];
+
+            jQuery('body').on('click', '.js-add-button', this, function(event) {
+                event.preventDefault();
+                list.append(stateArray[Math.floor(Math.random() * stateArray.length)]);
+            });
+            
+        }).call(jQuery);
+
+
+        var acme = function(self) {
+            var _self = this;
+
+            var instance = new ATB({
+                callback: function (xhrResponse) {
+                    return xhrResponse.status === 200;
+                }
+            });
+
+            instance.init(self);
+
+            instance.on('request', function() {
+            });
+
+            instance.on('response', function() {
+            });
+
+            instance.on('error', function() {
+                console.log(this.self, this.response);
+            });
+
+            instance.on('success', function() {
+                console.log(this.self, this.response);
+            });
+
+        };
+
+        jQuery('body').on('click', '.js-action-confirm', this, function(event) {
+            event.preventDefault();
+            jQuery(this).removeClass('js-action-confirm');
+
+
+            acme(this);
+        });
+        
+    </script>
+</body>
+</html>

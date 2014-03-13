@@ -1,0 +1,23 @@
+{
+  "name": "action-toggle-button",
+  "version": "1.0.0",
+  "description": "Simple 2 state button toggling after succesful ajax response",
+  "author": "Daniel Sitek (https://github.com/danielsitek)",
+  "main": "index.js",
+  "dependencies": {
+    "chameleon-stylus-plugin": "~0.4.6"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chameleonui/action-toggle-button"
+    },
+  "keywords": [
+    "button",
+    "toggle button",
+    "ajax"
+  ],
+  "license": "MIT",
+  "readmeFilename": "Readme.md"
+}
