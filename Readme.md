@@ -22,11 +22,11 @@ $ npm install
 
 ```js
 new ActionToggleButton([options]);
-```s
+```
 
 ### Options
 
-```js
+```jss
 method: 'POST',
 callback: function (xhrResponse) {
     return xhrResponse.status >= 200 && xhrResponse.status <= 399;
