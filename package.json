@@ -1,6 +1,6 @@
 {
   "name": "action-toggle-button",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple 2 state button toggling after succesful ajax response",
   "author": "Daniel Sitek (https://github.com/danielsitek)",
   "main": "index.js",
